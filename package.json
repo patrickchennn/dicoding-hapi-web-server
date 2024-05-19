@@ -8,7 +8,7 @@
     "tsc:watch": "tsc --watch",
     "dev": "concurrently npm:tsc:watch nodemon ./build/main.js",
     "build": "tsc",
-    "start": "node ./build/main.js"
+    "start": "NODE_ENV=production node ./build/main.js"
   },
   "keywords": [],
   "author": "",
