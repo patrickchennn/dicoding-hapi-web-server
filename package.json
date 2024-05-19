@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "tsc:watch": "tsc --watch",
-    "dev": "concurrently npm:tsc:watch nodemon ./build/main.js"
+    "dev": "concurrently npm:tsc:watch nodemon ./build/main.js",
+    "build": "tsc",
+    "start": "node ./build/main.js"
   },
   "keywords": [],
   "author": "",
