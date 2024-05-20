@@ -5,9 +5,17 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+console.log("import.meta.url=",import.meta.url);
+console.log("__filename=",__filename);
 
-const notesPath = path.resolve(__dirname, './notes.json');
+const __dirname = dirname(__filename);
+console.log("__dirname=",__dirname)
+
+const pathWithoutBuild = __dirname.replace(/\/build$/, '');
+console.log("pathWithoutBuild=",pathWithoutBuild)
+
+const notesPath = path.resolve(pathWithoutBuild, 'notes.json');
+console.log("notesPath=",notesPath)
 
 const readNotes = () => {
   try {

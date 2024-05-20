@@ -8,14 +8,16 @@
     "tsc:watch": "tsc --watch",
     "dev": "concurrently npm:tsc:watch nodemon ./build/main.js",
     "build": "tsc",
-    "start": "NODE_ENV=production node ./build/main.js"
+    "start:node": "NODE_ENV=production node ./build/main.js",
+    "start:pm2": "pm2 start npm --name 'notes-api' --run 'start:node'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@hapi/hapi": "^21.3.9",
-    "nanoid": "^3.3.7"
+    "nanoid": "^3.3.7",
+    "pm2": "^5.3.1"
   },
   "devDependencies": {
     "@types/hapi": "^18.0.14",
